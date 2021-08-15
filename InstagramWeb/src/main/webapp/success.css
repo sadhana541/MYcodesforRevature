@@ -1,0 +1,33 @@
+.mid {
+margin: auto;
+ padding-top: 50px;
+width: 60%;
+border: 5px solid black;
+padding: 10px;
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+align-items: center; 
+height:100%;
+  background-color:   green;
+ 
+}
+.m{
+padding-top: 100px;
+}
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: white; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+a {
+      text-decoration: none;
+      color: white;
+ }

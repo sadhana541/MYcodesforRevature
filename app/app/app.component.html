@@ -1,0 +1,33 @@
+hello {{ title }} <br>
+
+<registerinfosysy></registerinfosysy> <br>
+<logininfosys></logininfosys>
+
+
+<div>
+	
+	<table border="5">
+    <tr><th></th><th>Name</th><th>Password</th><th>Email</th><th>Address</th></tr>
+    <tr *ngFor="let item of getAllUser(); let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{item.name | uppercase}}</td>
+        <td>{{item.password | lowercase}}</td>
+        <td>{{item.email }}</td>
+		<td>{{item.address }}</td>
+    </tr>
+</table>
+
+<table border="5">
+    <tr><th></th><th>Name</th><th>Password</th><th>Email</th><th>Address</th></tr>
+    <tr *ngFor="let item of getalluserdetail(); let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{item.name | uppercase}}</td>
+        <td>{{item.password | lowercase}}</td>
+        <td>{{item.email }}</td>
+		<td>{{item.address }}</td>
+    </tr>
+</table>
+
+	
+
+</div>

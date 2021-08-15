@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>User Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<link href="login.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="registor.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+	</head>
+	<body>
+		<!-- main -->
+		<div class="topnav" style="padding-left:40px">
+			<a href="index.jsp">Home</a>
+			<a class="active" href="login.html">Login</a>
+			<a href="register.html">Register</a>
+		</div>
+		<div class="main-w3layouts wrapper">
+			<h1>LOGIN CUSTOMER DETAILS </h1>
+			<div class="main-agileinfo">
+				<div class="agileits-top">
+					<form action="LoginServlet" method="post">
+						<div style="margin-top: 20px;"><span>Email</span></div>
+						<input class="text" type="email" name="email" placeholder="email" required>
+						<div style="margin-top: 20px;"><span>Password</span></div>
+						<input class="text" type="password" name="pwd" placeholder="Password" required>
+						<input type="submit" value="LOGIN CUSTOMER">
+					</form>
+					<p><a href="index.jsp" class="text" style="color: black;">Go Back</a></p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

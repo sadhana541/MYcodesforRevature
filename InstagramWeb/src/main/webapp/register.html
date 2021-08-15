@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<link href="registor.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+	</head>
+	<body>
+		<!-- main -->
+		<div class="topnav" style="padding-left:40px">
+		  <a href="index.jsp">Home</a>
+		  <a href="login.html">Login</a>
+		  <a class="active" href="register.html">Register</a>
+		</div>
+		<div class="main-w3layouts wrapper">
+			<h1>REGISTER CUSTOMER DETAILS </h1>
+			<div class="main-agileinfo">
+				<div class="agileits-top">
+					<form action="RegisterServlet" method="post">
+						<span>Name</span>
+						<input type="text" name="name" id="name" placeholder="Username" required class="text">
+						<div style="margin-top: 20px;"><span>Password</span></div>
+						<input class="text" type="password" name="pwd" id="pwd" placeholder="Password" onkeyup="validatePassword()" required>
+						<span id="pwdValidation"></span>
+						<div style="margin-top: 20px;"><span>Email</span></div>
+						<input class="text" type="email" name="email" id="email" placeholder="Email" onkeyup="checkMail()" required>
+						<span id="emailValidation"></span>
+						<div style="margin-top: 20px;"><span>Address</span></div>
+						<input class="text" type="text" name="address" id="address" placeholder="Address" required>
+						<input type="submit" value="SIGNUP">
+					</form>
+					<p>Don't have an Account? <a href="login.html"> Login Now!</a></p>
+					<p><br><a href=index.jsp>Go Back</a><br></p>
+				</div>
+			</div>
+		</div>
+		<script>
+			function validatePassword(){
+				var pass = document.getElementById("pwd").value;
+				var pwdError = document.getElementById("pwdValidation");
+				if(pass.length < 5){
+					pwdError.innerHTML = "Password should be greater than 4 characters<br>";
+				}
+				else{
+					pwdError.innerHTML = "";
+				}
+			}
+			
+			function checkMail(){
+		        
+				var email = document.getElementById("email").value;
+				var emailError = document.getElementById("emailValidation");
+				
+				var xhr=new XMLHttpRequest();
+				xhr.open("GET","CheckMailServlet?email="+email, true);
+				xhr.send();
+				
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4){
+						var msg = xhr.responseText;
+						emailError.innerHTML = msg;
+					}
+				}
+			}
+		</script>
+</body>
+</html>
